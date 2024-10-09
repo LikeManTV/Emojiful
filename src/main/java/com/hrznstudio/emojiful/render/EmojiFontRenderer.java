@@ -161,7 +161,7 @@ public class EmojiFontRenderer extends Font {
                     return true;
                 });
             }
-            String text = builder.toString().replaceAll(MY_NAME, MY_NAME + " :blobcatbolb:");
+            String text = builder.toString().replaceAll(MY_NAME, MY_NAME + " blobcatbolb");
             if (text.length() > 0){
                 color = (color & -67108864) == 0 ? color | -16777216 : color;
                 HashMap<Integer, Emoji> emojis = new LinkedHashMap<>();
@@ -185,10 +185,6 @@ public class EmojiFontRenderer extends Font {
                             ignore.set(true);
                             return true;
                         }
-                    }
-                    if (ch == ':') {
-                        ignore.set(false);
-                        cleanPos.getAndIncrement();
                     }
                     return true;
                 });

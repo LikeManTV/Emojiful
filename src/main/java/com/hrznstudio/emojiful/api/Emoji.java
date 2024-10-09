@@ -104,6 +104,8 @@ public class Emoji implements Predicate<String> {
         if (regex != null) return regex;
         List<String> processed = new ArrayList<>();
         for (String string : strings) {
+            string = string.replace(":", "");
+            
             char last = string.toLowerCase().charAt(string.length() - 1);
             String s = string;
             if (last >= 97 && last <= 122){
@@ -123,6 +125,8 @@ public class Emoji implements Predicate<String> {
         if (textRegex != null) return textRegex;
         List<String> processed = new ArrayList<>();
         for (String string : texts) {
+            string = string.replace(":", "");
+            
             char last = string.toLowerCase().charAt(string.length() - 1);
             String s = string;
             if (last >= 97 && last <= 122){
